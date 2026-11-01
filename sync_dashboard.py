@@ -18,7 +18,7 @@ def upsert(table, rows, conflict):
     for start in range(0,len(rows),100):
         batch=rows[start:start+100]
         request=urllib.request.Request(endpoint,data=json.dumps(batch).encode(),method='POST',headers={
-            'apikey':key,'Authorization':'Bearer '+key,'Content-Type':'application/json',
+            'apikey':key,'Content-Type':'application/json',
             'Prefer':'resolution=merge-duplicates,return=minimal'
         })
         with urllib.request.urlopen(request,timeout=30) as response:

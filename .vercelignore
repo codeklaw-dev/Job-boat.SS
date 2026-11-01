@@ -1,0 +1,7 @@
+data/
+attachments/
+__pycache__/
+*.sqlite3
+*.pdf
+*.docx
+*.xlsx

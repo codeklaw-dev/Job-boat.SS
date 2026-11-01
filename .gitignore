@@ -5,3 +5,7 @@ dashboard/dist/
 dashboard/.env*
 !dashboard/.env.example
 dashboard/.vercel/
+/.vercel/
+/.env.local
+.vercel
+.env*
