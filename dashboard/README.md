@@ -6,7 +6,7 @@ Modules: overview, fast income, career roles, approvals, CV library, sources, pr
 
 ## Deploy
 
-1. Create a private Supabase project. Run `supabase/schema.sql` once in its SQL editor. Enable email OTP in Auth and restrict permitted redirect URLs to the Vercel domain.
+1. Create a private Supabase project. Run `supabase/schema.sql` once in its SQL editor. Enable email OTP in Auth. Set the Auth Site URL to `https://job-boat-dashboard.vercel.app/` and allow that exact URL in Redirect URLs; the sign-in request uses it explicitly.
 2. Import this repository into Vercel. Set the root directory to `dashboard`; the build command is `npm run build` and output directory is `dist`.
 3. Set only `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel. The anon key is intended for the browser; row-level security protects records. Never set a service role key in Vercel frontend variables.
 4. Deploy and sign in with the career email. Find the user UUID in Supabase Authentication > Users.
